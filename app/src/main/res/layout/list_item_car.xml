@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_8"
+    android:background="@drawable/bg_white_card"
+    android:padding="@dimen/margin_16">
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_yellow"
+        android:drawableStart="@drawable/ic_baseline_star_24"
+        android:drawablePadding="4dp"
+        android:paddingHorizontal="@dimen/margin_8"
+        android:text="4.5"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_deals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18 deals"
+        android:textColor="@color/colorGreen"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_car"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="@dimen/margin_16"
+        android:contentDescription="@string/car"
+        android:src="@drawable/car_blue"
+        app:layout_constraintTop_toBottomOf="@id/tv_rating" />
+
+    <TextView
+        android:id="@+id/tv_car_name"
+        style="@style/TextStyle"
+        android:text="Blue Kia Cerato"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_car" />
+
+    <TextView
+        android:id="@+id/tv_car_rate"
+        style="@style/TextStyle"
+        android:text="From $188/day"
+        android:textColor="@color/colorGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_name" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_double_arrow_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_car_rate"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

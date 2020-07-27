@@ -40,14 +40,12 @@
 
             <TextView
                 android:id="@+id/tv_choose_car"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextStyle"
                 android:layout_marginTop="@dimen/margin_24"
                 android:contentDescription="@string/menu"
                 android:text="@string/choose_a_car"
                 android:textColor="@color/colorWhite"
                 android:textSize="22sp"
-                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/img_menu" />
 
