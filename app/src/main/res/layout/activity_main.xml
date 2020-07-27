@@ -1,98 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_curved_card"
-            android:paddingHorizontal="@dimen/margin_16"
-            android:paddingVertical="@dimen/margin_24">
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/img_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/menu"
-                android:src="@drawable/ic_baseline_menu_24"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_curved_card"
+                android:paddingHorizontal="@dimen/margin_16"
+                android:paddingVertical="@dimen/margin_24">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/menu"
-                android:src="@drawable/ic_baseline_account_circle_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/img_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/menu"
+                    android:src="@drawable/ic_baseline_menu_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_choose_car"
-                style="@style/TextStyle"
-                android:layout_marginTop="@dimen/margin_24"
-                android:contentDescription="@string/menu"
-                android:text="@string/choose_a_car"
-                android:textColor="@color/colorWhite"
-                android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_menu" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/menu"
+                    android:src="@drawable/ic_baseline_account_circle_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_view"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_16"
-                android:layout_marginEnd="@dimen/margin_16"
-                android:background="@drawable/bg_white_rec"
-                app:layout_constraintEnd_toStartOf="@id/img_tune"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_choose_car" />
+                <TextView
+                    android:id="@+id/tv_choose_car"
+                    style="@style/TextStyle"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:contentDescription="@string/menu"
+                    android:text="@string/choose_a_car"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_menu" />
 
-            <ImageView
-                android:id="@+id/img_tune"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/menu"
-                android:src="@drawable/ic_equalizer"
-                android:tint="@color/colorWhite"
-                app:layout_constraintBottom_toBottomOf="@id/search_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/search_view" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:background="@drawable/bg_white_rec"
+                    app:layout_constraintEnd_toStartOf="@id/img_tune"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_choose_car" />
 
-    </com.google.android.material.appbar.MaterialToolbar>
+                <ImageView
+                    android:id="@+id/img_tune"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/menu"
+                    android:src="@drawable/ic_equalizer"
+                    android:tint="@color/colorWhite"
+                    app:layout_constraintBottom_toBottomOf="@id/search_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/search_view" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/tv_results"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginTop="@dimen/margin_24"
-        android:text="@string/_23_results"
-        android:textColor="@color/colorBlack"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        </com.google.android.material.appbar.MaterialToolbar>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:contentDescription="@string/more"
-        android:src="@drawable/ic_baseline_more"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_results" />
+        <TextView
+            android:id="@+id/tv_results"
+            style="@style/TextStyle"
+            android:layout_margin="@dimen/margin_24"
+            android:text="@string/_23_results"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:contentDescription="@string/more"
+            android:src="@drawable/ic_baseline_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_results" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_results"
+            tools:listitem="@layout/list_item_car" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

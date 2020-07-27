@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/margin_8"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="@dimen/margin_16"
     android:background="@drawable/bg_white_card"
-    android:padding="@dimen/margin_16">
+    android:elevation="@dimen/margin_8"
+    android:padding="@dimen/margin_24">
 
     <TextView
         android:id="@+id/tv_rating"
@@ -15,9 +17,8 @@
         android:drawableStart="@drawable/ic_baseline_star_24"
         android:drawablePadding="4dp"
         android:paddingHorizontal="@dimen/margin_8"
-        android:text="4.5"
         android:textColor="@color/colorWhite"
-        android:textSize="14sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,9 +26,9 @@
         android:id="@+id/tv_deals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="18 deals"
         android:textColor="@color/colorGreen"
-        android:textSize="15sp"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,18 +44,16 @@
     <TextView
         android:id="@+id/tv_car_name"
         style="@style/TextStyle"
-        android:text="Blue Kia Cerato"
         android:textColor="@color/colorBlack"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_car" />
 
     <TextView
         android:id="@+id/tv_car_rate"
         style="@style/TextStyle"
-        android:text="From $188/day"
         android:textColor="@color/colorGrey"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_car_name" />
 
@@ -62,8 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_blue"
+        android:contentDescription="@string/select"
         android:padding="10dp"
         android:src="@drawable/ic_baseline_double_arrow_24"
         app:layout_constraintBottom_toBottomOf="@id/tv_car_rate"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

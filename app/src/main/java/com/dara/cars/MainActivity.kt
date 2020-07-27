@@ -5,14 +5,23 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var cars : List<Car>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val blueCar = Car("Blue Kia Cerato", 4.5F, "18", 188F, R.drawable.car_blue)
+        val redCar = Car("Red Tesla", 4.3F, "10", 179F, R.drawable.car_red)
+        cars = listOf(blueCar, redCar)
+
         setupSearchView(search_view)
+        setupImagesRecyclerView()
     }
 
     private fun setupSearchView(searchView: SearchView) {
@@ -30,6 +39,15 @@ class MainActivity : AppCompatActivity() {
         linearLayoutSearchView.removeView(searchViewIcon)
         //then put it back (to the right by default)
         linearLayoutSearchView.addView(searchViewIcon)
+    }
+
+    private fun setupImagesRecyclerView() {
+        val carAdapter = CarAdapter(cars)
+        val linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        rv_cars.apply {
+            adapter = carAdapter
+            layoutManager = linearLayoutManager
+        }
     }
 
 }

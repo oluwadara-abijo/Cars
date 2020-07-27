@@ -3,6 +3,7 @@
     <string name="menu">Menu</string>
     <string name="more">More</string>
     <string name="choose_a_car">Choose a Car</string>
-    <string name="_23_results">23 results</string>
+    <string name="_23_results">23 Results</string>
     <string name="car">Car</string>
+    <string name="select">Select</string>
 </resources>
