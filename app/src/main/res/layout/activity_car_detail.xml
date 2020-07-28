@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".CarDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_24">
+
+        <View
+            android:id="@+id/blue_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_curved_card"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/blue_background"
+            app:layout_constraintTop_toTopOf="@id/blue_background" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_car_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_24"
+            android:background="@drawable/bg_white_card_detail"
+            android:elevation="@dimen/margin_8"
+            android:padding="@dimen/margin_24"
+            app:layout_constraintTop_toBottomOf="@id/divider">
+
+            <TextView
+                android:id="@+id/tv_car_name"
+                style="@style/TextStyle"
+                android:layout_marginTop="@dimen/margin_48"
+                android:gravity="center"
+                android:text="Orange Audi"
+                android:textColor="@color/colorBlack"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_car_description"
+                style="@style/TextStyle"
+                android:gravity="center"
+                android:text="4 doors Audi | A4 Sports"
+                android:textColor="@color/colorGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_name" />
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/colorYellow"
+                android:rating="4"
+                app:layout_constraintBottom_toBottomOf="@id/tv_reviews"
+                app:layout_constraintEnd_toStartOf="@id/tv_reviews"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_reviews" />
+
+            <TextView
+                android:id="@+id/tv_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="(23.5k)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rating_bar"
+                app:layout_constraintTop_toBottomOf="@id/tv_car_description" />
+
+            <ImageView
+                android:id="@+id/img_automatic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_32"
+                android:src="@drawable/ic_baseline_autorenew_24"
+                app:layout_constraintEnd_toEndOf="@id/tv_automatic"
+                app:layout_constraintStart_toStartOf="@id/tv_automatic"
+                app:layout_constraintTop_toBottomOf="@id/tv_reviews" />
+
+            <TextView
+                android:id="@+id/tv_automatic"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/margin_8"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:gravity="center"
+                android:text="@string/automatic"
+                app:layout_constraintEnd_toStartOf="@+id/tv_air_con"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_automatic" />
+
+            <ImageView
+                android:id="@+id/img_air_con"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_ac_unit_24"
+                app:layout_constraintEnd_toEndOf="@id/tv_air_con"
+                app:layout_constraintStart_toStartOf="@id/tv_air_con"
+                app:layout_constraintTop_toTopOf="@id/img_automatic" />
+
+            <TextView
+                android:id="@+id/tv_air_con"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/margin_8"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:gravity="center"
+                android:text="@string/automatic"
+                app:layout_constraintEnd_toStartOf="@+id/tv_seaters"
+                app:layout_constraintStart_toEndOf="@+id/tv_automatic"
+                app:layout_constraintTop_toBottomOf="@id/img_automatic" />
+
+            <ImageView
+                android:id="@+id/img_seaters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_person_24"
+                app:layout_constraintEnd_toEndOf="@id/tv_seaters"
+                app:layout_constraintStart_toStartOf="@id/tv_seaters"
+                app:layout_constraintTop_toTopOf="@id/img_automatic" />
+
+            <TextView
+                android:id="@+id/tv_seaters"
+                style="@style/TextStyle"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/margin_8"
+                android:layout_marginVertical="@dimen/margin_8"
+                android:gravity="center"
+                android:text="5 seaters"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_air_con"
+                app:layout_constraintTop_toBottomOf="@id/img_automatic" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/img_car"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:contentDescription="@string/car"
+            android:elevation="@dimen/margin_16"
+            android:src="@drawable/car_orange"
+            app:layout_constraintBottom_toTopOf="@id/card_car_details"
+            app:layout_constraintEnd_toEndOf="@id/card_car_details"
+            app:layout_constraintStart_toStartOf="@id/card_car_details"
+            app:layout_constraintTop_toTopOf="@id/card_car_details" />
+
+        <TextView
+            android:id="@+id/tv_trip_dates_label"
+            style="@style/TextStyle"
+            android:layout_marginTop="@dimen/margin_24"
+            android:gravity="center"
+            android:text="Trip Dates"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@id/card_car_details"
+            app:layout_constraintTop_toBottomOf="@id/card_car_details" />
+
+        <RelativeLayout
+            android:id="@+id/layout_trip_dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_24"
+            android:background="@drawable/bg_white_rec"
+            android:elevation="@dimen/margin_8"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_16"
+            app:layout_constraintTop_toBottomOf="@id/tv_trip_dates_label">
+
+            <ImageView
+                android:id="@+id/img_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/tv_trip_dates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/margin_16"
+                android:layout_toStartOf="@id/img_select_date"
+                android:layout_toEndOf="@id/img_calendar"
+                android:text="03/07/2020 - 05/07/2020"
+                android:textColor="@color/colorGrey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_select_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_blue"
+                android:contentDescription="@string/select"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_double_arrow_24" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_pickup_label"
+            style="@style/TextStyle"
+            android:layout_marginTop="@dimen/margin_32"
+            android:gravity="center"
+            android:text="@string/pickup_amp_return"
+            android:textColor="@color/colorBlack"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@id/card_car_details"
+            app:layout_constraintTop_toBottomOf="@id/layout_trip_dates" />
+
+        <RelativeLayout
+            android:id="@+id/layout_pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_24"
+            android:background="@drawable/bg_white_rec"
+            android:elevation="@dimen/margin_8"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_16"
+            app:layout_constraintTop_toBottomOf="@id/tv_pickup_label">
+
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/margin_16"
+                android:layout_toStartOf="@id/img_select_pickup"
+                android:layout_toEndOf="@id/img_location"
+                android:text="Miami, 786 FL"
+                android:textColor="@color/colorGrey"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/img_select_pickup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_blue"
+                android:contentDescription="@string/select"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_double_arrow_24" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_48"
+            android:background="@drawable/bg_white_card_checkout"
+            android:elevation="@dimen/margin_8"
+            android:paddingHorizontal="@dimen/margin_32"
+            android:paddingTop="@dimen/margin_24"
+            app:layout_constraintTop_toBottomOf="@id/layout_pickup">
+
+            <TextView
+                android:id="@+id/tv_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/tv_total_label"
+                android:text="$399"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_per_trip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_total_label"
+                android:layout_toEndOf="@id/tv_amount"
+                android:text=" / trip"
+                android:textSize="22sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/colorRed"
+                android:padding="@dimen/margin_16"
+                android:text="Go to Checkout"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_24" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
