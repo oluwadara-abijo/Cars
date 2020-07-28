@@ -7,17 +7,28 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CarAdapter(private var cars: List<Car>) :
+class CarAdapter(private var cars: List<Car>, private val clickListener: ItemClickListener) :
     RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
 
-    inner class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         fun bind(car: Car) {
             itemView.findViewById<ImageView>(R.id.img_car).setImageResource(car.image)
             itemView.findViewById<TextView>(R.id.tv_car_name).text = car.name
             itemView.findViewById<TextView>(R.id.tv_rating).text = car.rating.toString()
             itemView.findViewById<TextView>(R.id.tv_deals).text = "${car.deals} Deals"
             itemView.findViewById<TextView>(R.id.tv_car_rate).text = "From $${car.rate}/day"
+            itemView.findViewById<ImageView>(R.id.img_select).setOnClickListener(this)
         }
+
+        override fun onClick(v: View?) {
+            val car = cars[adapterPosition]
+            clickListener.onItemClick(car)
+        }
+    }
+
+    interface ItemClickListener {
+        fun onItemClick(car: Car)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {

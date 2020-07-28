@@ -1,5 +1,6 @@
 package com.dara.cars
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
@@ -9,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var cars : List<Car>
+class MainActivity : AppCompatActivity(), CarAdapter.ItemClickListener {
+    private lateinit var cars: List<Car>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,12 +43,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupImagesRecyclerView() {
-        val carAdapter = CarAdapter(cars)
+        val carAdapter = CarAdapter(cars, this)
         val linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         rv_cars.apply {
             adapter = carAdapter
             layoutManager = linearLayoutManager
         }
+    }
+
+    override fun onItemClick(car: Car) {
+        val intent = Intent(this, CarDetailActivity::class.java)
+        startActivity(intent)
     }
 
 }

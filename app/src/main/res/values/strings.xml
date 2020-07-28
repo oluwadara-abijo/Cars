@@ -8,4 +8,7 @@
     <string name="select">Select</string>
     <string name="automatic">Automatic</string>
     <string name="pickup_amp_return"><![CDATA[Pickup & Return]]></string>
+    <string name="air_con">Air Con</string>
+    <string name="back">Back</string>
+    <string name="go_to_checkout">Go to Checkout</string>
 </resources>
